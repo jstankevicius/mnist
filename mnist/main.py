@@ -1,11 +1,11 @@
 # pro tip:
 # look up basically every method used in this program
-
-# import things we'll use later
+    # import things we'll use later
 import keras
 from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense
+
 
 # cop data
 # this is basically just a bunch of 28x28 arrays with a brightness value
@@ -46,7 +46,7 @@ model.add(Dense(10, activation="relu"))
 model.compile(loss="mse", optimizer="sgd", metrics=["accuracy"])
 
 # perform very fancy calculus regression wow
-model.fit(x_train, y_train, batch_size=256, epochs=5, verbose=1)
+model.fit(x_train, y_train, batch_size=256, epochs=200, verbose=1)
 
 # how bad did this thing fail
 score = model.evaluate(x_test, y_test, verbose=0)
